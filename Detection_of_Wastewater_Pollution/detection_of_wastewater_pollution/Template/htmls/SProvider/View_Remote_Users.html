@@ -1,0 +1,80 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {	background-image: url("/static/.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    }
+			.container-fluid {padding:50px;}
+			.container{padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			input{
+			font-family:'Russo One', sans-serif;
+			font-size:15px;
+			}
+
+
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center" style="color: red">VIEW ALL REMOTE USERS !!! </p>
+                            <div class="viewclients">
+							  <table border="1">
+								<tr>
+									<th style="color:green">USER NAME</th>
+									<th style="color:green">EMAIL</th>
+									<th style="color:green">Gender</th>
+									<th style="color:green">Address</th>
+									<th style="color:green">Mob No</th>
+									<th style="color:green">Country</th>
+									<th style="color:green">State</th>
+									<th style="color:green">City</th>
+								</tr>
+								<tr>
+								{% for o in objects %}
+									<td><span>{{o.username}}</span></td>
+									<td><span>{{o.email}}</span></td>
+									<td><span>{{o.gender}}</span></td>
+									<td><span>{{o.address}}</span></td>
+									<td><span>{{o.phoneno}}</span></td>
+									<td><span>{{o.country}}</span></td>
+									<td><span>{{o.state}}</span></td>
+									<td><span>{{o.city}}</span></td>
+								</tr>
+								{% endfor %}
+							</table>
+						</div>
+					  </fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

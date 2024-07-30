@@ -1,0 +1,112 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {	background-image: url("/static/.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    }
+			.container-fluid {padding:50px;}
+			.container{padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid black;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style12 {color: green; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center">View Detection of Wastewater Pollution Type Details  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table width="739" border="5" align="center" bordercolor="black">
+
+                                    <tr>
+
+                                    <td width="366"><div align="center" class="style12"><span class="style8 style6">Fid</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Name_of_Monitoring_Location</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Type_Water_Body</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">State_Name</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Temperature</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Dissolved_Oxygen_mgperL</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">pH</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Conductivity_mhospercm</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">BOD_mgperL</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">NitrateN_NitriteN_mgperL</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Fecal_Coliform_MPNper100ml</span></div></td>
+<td width="366"><div align="center" class="style12"><span class="style8 style6">Total_Coliform_MPNper100ml</span></div></td>
+                                    <td width="366" bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">Prediction</span></div></td>
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+
+                          <td style="color:black" ><div align="left">{{object.Fid}}</div></td>
+<td style="color:black" ><div align="left">{{object.Name_of_Monitoring_Location}}</div></td>
+<td style="color:black" ><div align="left">{{object.Type_Water_Body}}</div></td>
+<td style="color:black" ><div align="left">{{object.State_Name}}</div></td>
+<td style="color:black" ><div align="left">{{object.Temperature}}</div></td>
+<td style="color:black" ><div align="left">{{object.Dissolved_Oxygen_mgperL}}</div></td>
+<td style="color:black" ><div align="left">{{object.pH}}</div></td>
+<td style="color:black" ><div align="left">{{object.Conductivity_mhospercm}}</div></td>
+<td style="color:black" ><div align="left">{{object.BOD_mgperL}}</div></td>
+<td style="color:black" ><div align="left">{{object.NitrateN_NitriteN_mgperL}}</div></td>
+<td style="color:black" ><div align="left">{{object.Fecal_Coliform_MPNper100ml}}</div></td>
+<td style="color:black" ><div align="left">{{object.Total_Coliform_MPNper100ml}}</div></td>
+<td style="color:black" ><div align="left">{{object.Prediction}}</div></td>
+
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
